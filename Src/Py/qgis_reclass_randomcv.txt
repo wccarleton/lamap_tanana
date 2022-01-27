@@ -1,0 +1,5 @@
+("tanana_lamap_random@1" <= 0.068326) * 1 +
+("tanana_lamap_random@1" > 0.068326  AND "tanana_lamap_random@1" <= 0.164929) * 2 +
+("tanana_lamap_random@1" > 0.164929  AND "tanana_lamap_random@1" <= 0.286714) * 3 +
+("tanana_lamap_random@1" > 0.286714  AND "tanana_lamap_random@1" <= 0.434746) * 4 +
+("tanana_lamap_random@1" > 0.434746  AND "tanana_lamap_random@1" <= 1) * 5

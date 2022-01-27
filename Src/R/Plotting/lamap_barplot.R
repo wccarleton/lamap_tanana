@@ -1,0 +1,22 @@
+par(family="serif",bg="white")
+plotobj <- barplot(lamap_class_sites_mat$count,main="Sites per LAMAP Class",names=c(1:5),ylab="Number of Sites",xlab="LAMAP Class",ylim=c(0,35))
+lines(x=plotobj,y=posterior_Y_ci[,4],lwd=2)
+polygon(x=c(plotobj,rev(plotobj)),
+         y=c(posterior_Y_ci[,4],rev(posterior_Y_ci[,6])),
+         col=rgb(.25,.25,.25,0.5),
+         border=NA)
+polygon(x=c(plotobj,rev(plotobj)),
+         y=c(posterior_Y_ci[,4],rev(posterior_Y_ci[,2])),
+         col=rgb(.25,.25,.25,0.5),
+         border=NA)
+polygon(x=c(plotobj,rev(plotobj)),
+         y=c(posterior_Y_ci[,4],rev(posterior_Y_ci[,5])),
+         col=rgb(.25,.25,.25,0.5),
+         border=NA)
+polygon(x=c(plotobj,rev(plotobj)),
+         y=c(posterior_Y_ci[,4],rev(posterior_Y_ci[,3])),
+         col=rgb(.25,.25,.25,0.5),
+         border=NA)
+###
+dev.copy(png,file="../Images/lamap_counts_rand.png",height=1000,width=1500,units="px",res=150)
+dev.off()
